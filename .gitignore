@@ -8,3 +8,6 @@
 /.settings
 /bin
 /history
+*.iml
+*.ipr
+*.iws
