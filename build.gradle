@@ -32,9 +32,16 @@ ext{
     serenityCucumberVersion = '1.9.45'
 }
 
+test {
+    testLogging.showStandardStreams = true
+    testLogging.exceptionFormat = 'full'
+}
+
 dependencies {
-    implementation group: 'org.assertj', name: 'assertj-core', version: '3.15.0'
-    implementation 'org.slf4j:slf4j-simple:2.0.0-alpha0'
+    implementation group: 'org.slf4j', name: 'slf4j-log4j12', version: '2.0.0-alpha1'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.0-alpha1'
+
+
 
     implementation "net.serenity-bdd:serenity-core:$rootProject.ext.serenityVersion"
     implementation "net.serenity-bdd:serenity-junit:$rootProject.ext.serenityVersion"
