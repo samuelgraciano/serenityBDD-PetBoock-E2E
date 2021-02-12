@@ -35,6 +35,8 @@ ext{
 test {
     testLogging.showStandardStreams = true
     testLogging.exceptionFormat = 'full'
+    systemProperties = System.properties
+    maxParallelForks = Runtime.runtime.availableProcessors() - 1
 }
 
 dependencies {
