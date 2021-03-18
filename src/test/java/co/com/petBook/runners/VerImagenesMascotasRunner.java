@@ -11,6 +11,6 @@ import org.junit.runner.RunWith;
 		glue = {"co.com.petBook.stepdefinitions"},
 		snippets = SnippetType.CAMELCASE
 )
-public class GoogleSearchRunner {
+public class VerImagenesMascotasRunner {
 
 }

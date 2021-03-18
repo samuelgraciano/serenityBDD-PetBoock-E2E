@@ -1,10 +1,12 @@
-package co.com.devco.questions;
+package co.com.petBook.questions;
 
+import co.com.petBook.userinterfaces.PetBookResultadosPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Attribute;
 
-import static co.com.devco.userinterfaces.GoogleResultadosPage.PRIMER_RESULTADO;
+import static co.com.petBook.userinterfaces.PetBookDetalleImagen.DETALLE_IMAGEN;
+import static co.com.petBook.userinterfaces.PetBookResultadosPage.RESULTADOS_BUSQUEDA;
 
 public class PrimerResultadoGoogle implements Question<Boolean> {
     private String resultado;
@@ -19,7 +21,7 @@ public class PrimerResultadoGoogle implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        String resultadoEncontrado = Attribute.of(PRIMER_RESULTADO).named("href").viewedBy(actor).asString();
+        String resultadoEncontrado = Attribute.of(DETALLE_IMAGEN).named("href").viewedBy(actor).asString();
         return resultadoEncontrado.contains(resultado);
     }
 }

@@ -6,4 +6,4 @@ Característica: pagina Pet-Book
 
   Escenario: Buscar las foto de la mascota
     Cuando el usuario busca la foto perro1.jpg de la mascota
-    Entonces debe encontrar la foto y agrandarla
+    Entonces debe encontrar la foto perro1.jpg y agrandarla

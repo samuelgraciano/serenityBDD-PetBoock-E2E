@@ -3,7 +3,7 @@ package co.com.petBook.userinterfaces;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
-public class GoogleResultadosPage {
-    public static final Target RESULTADOS_BUSQUEDA = Target.the("resultados de bsuqueda").located(By.xpath("//div[@id='search']"));
-    public static final Target PRIMER_RESULTADO = Target.the("Primer resultado de busqueda").located(By.xpath("//div[@id='search']//div[@class='g' and position()=1]//link"));
+public class PetBookResultadosPage {
+    public static final Target RESULTADOS_BUSQUEDA = Target.the("verifica que abra una pagina nueva").located(By.xpath("//div[@class='row']"));
+        //.located(By.xpath("//div[@style='background-image: url(\"assets/images/perro1.jpg\");']"))
 }
