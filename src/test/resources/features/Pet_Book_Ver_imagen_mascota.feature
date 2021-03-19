@@ -1,9 +1,9 @@
 # language: es
 Característica: pagina Pet-Book
-  Como usuario web
+  Como persona con mascotas
   Quiero usar Pet-Book
-  Para ver las imagenes de las mascotas
+  Para ver las imagenes de mis mascotas
 
   Escenario: Buscar las foto de la mascota
-    Cuando el usuario busca la foto perro1.jpg de la mascota
-    Entonces debe encontrar la foto perro1.jpg y agrandarla
+    Cuando la persona busca la foto gato2.jpeg de la mascota
+    Entonces debe encontrar la foto gato2.jpeg y agrandarla

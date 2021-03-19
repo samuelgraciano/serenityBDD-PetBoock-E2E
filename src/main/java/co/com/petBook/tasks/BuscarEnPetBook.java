@@ -30,7 +30,7 @@ public class BuscarEnPetBook implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Open.url(PET_BOOK_HOME_PAGE),
-                Click.on(CLICK_IMAGEN),// nesecito preguntar como le mando la imagen al target y se la coloco al xpath
+                Click.on(CLICK_IMAGEN.of(imagen)),// nesecito preguntar como le mando la imagen al target y se la coloco al xpath
               //  Enter.theValue().into(CLICK_IMAGEN).thenHit(Keys.ENTER),
                 WaitUntil.the(RESULTADOS_BUSQUEDA, isVisible()).forNoMoreThan(10).seconds()
         );
