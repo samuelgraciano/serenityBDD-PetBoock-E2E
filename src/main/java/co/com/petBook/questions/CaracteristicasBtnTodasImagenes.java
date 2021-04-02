@@ -21,7 +21,7 @@ public class CaracteristicasBtnTodasImagenes implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        String resultadoEncontrado = Attribute.of(DETALLE_TODAS_LAS_IMAGENES_PERROS.of(resultado)).named("src").viewedBy(actor).asString();
+        String resultadoEncontrado = Attribute.of(DETALLE_TODAS_LAS_IMAGENES.of(resultado)).named("src").viewedBy(actor).asString();
         return resultadoEncontrado.contains(resultado);
     }
 }

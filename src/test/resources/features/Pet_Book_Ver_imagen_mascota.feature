@@ -4,6 +4,6 @@ Característica: pagina Pet-Book
   Quiero usar Pet-Book
   Para ver las imagenes de mis mascotas
 
-  Escenario: Buscar las foto de la mascota
-    Cuando la persona busca la foto gato2.jpeg de la mascota
-    Entonces debe encontrar la foto gato2.jpeg y agrandarla
+  Escenario: Buscar las fotos de las mascotas
+    Cuando la persona busca la foto gato1.jpg de la mascota
+    Entonces debe encontrar la foto gato1.jpg y agrandarla
