@@ -28,7 +28,6 @@ public class PresionarBotonGato implements Task {
         actor.attemptsTo(
                 Open.url(PET_BOOK_HOME_PAGE),
                 Click.on(CLICK_BOTON_GATO),
-                //  Enter.theValue().into(CLICK_IMAGEN).thenHit(Keys.ENTER),
                 WaitUntil.the(RESULTADOS_BUSQUEDA, isVisible()).forNoMoreThan(10).seconds()
         );
     }

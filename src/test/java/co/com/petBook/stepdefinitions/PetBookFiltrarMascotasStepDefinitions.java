@@ -1,16 +1,17 @@
 package co.com.petBook.stepdefinitions;
 
+import co.com.petBook.exceptions.ResultadoDeBusquedaInesperado;
 import co.com.petBook.questions.CaracteristicasBtnGatos;
 import co.com.petBook.questions.CaracteristicasBtnPerros;
 import co.com.petBook.questions.CaracteristicasBtnTodasImagenes;
-import co.com.petBook.questions.CaracteristicasImagen;
+
 import co.com.petBook.tasks.*;
-import cucumber.api.PendingException;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 
 import java.util.ArrayList;
 
+import static co.com.petBook.exceptions.ResultadoDeBusquedaInesperado.*;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -20,9 +21,7 @@ public class PetBookFiltrarMascotasStepDefinitions {
     @Cuando("^la (.*) presione el boton All para ver todas las mascotas$")
     public void PersonaPresionaBotonVerTodasMascotas(String nombreActor) {
         theActorCalled(nombreActor).attemptsTo(PresionarBotonAll.verImagenesBotonAll());
-
     }
-
 
     @Entonces("^debe encontrar todas las mascotas$")
     public void EncontrarTodasLasMascotas() {
@@ -36,7 +35,8 @@ public class PetBookFiltrarMascotasStepDefinitions {
         while (i < listaAnimalesPetBook.size()){
             theActorInTheSpotlight().should(seeThat(
                     CaracteristicasBtnTodasImagenes.resultadoBtnTodasImagenes((String) listaAnimalesPetBook.get(i))
-            ));
+            ).orComplainWith(
+                    ResultadoDeBusquedaInesperado.class, FALTA_FOTO_MASCOTA));
 
             i++;
         }
@@ -58,10 +58,9 @@ public class PetBookFiltrarMascotasStepDefinitions {
         while (i < listaAnimalesPerrosPetBook.size()){
             theActorInTheSpotlight().should(seeThat(
                     CaracteristicasBtnPerros.resultadoBtnPerros((String) listaAnimalesPerrosPetBook.get(i))
-            ));
-
+            ).orComplainWith(
+                    ResultadoDeBusquedaInesperado.class, NO_ENCONTRO_ALGUNA_FOTO_PERRO));
             i++;
-
         }
 
     }
@@ -82,12 +81,11 @@ public class PetBookFiltrarMascotasStepDefinitions {
 
             theActorInTheSpotlight().should(seeThat(
                     CaracteristicasBtnGatos.resultadoBtnGatos((String) listaAnimalesGatosPetBook.get(i))
-            ));
+            ).orComplainWith(
+                    ResultadoDeBusquedaInesperado.class, NO_ENCONTRO_ALGUNA_FOTO_GATO));
             i++;
 
         }
-
-
     }
 
 }

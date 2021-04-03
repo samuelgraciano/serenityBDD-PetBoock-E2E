@@ -1,14 +1,14 @@
 package co.com.petBook.stepdefinitions;
 
 
+import co.com.petBook.exceptions.ResultadoDeBusquedaInesperado;
 import co.com.petBook.questions.CaracteristicasImagen;
 import co.com.petBook.tasks.BuscarEnPetBook;
-import co.com.petBook.tasks.SimuladorDBAnimalesPetBook;
+
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 
-import java.util.ArrayList;
-
+import static co.com.petBook.exceptions.ResultadoDeBusquedaInesperado.NO_ENCONTRO_LA_FOTO;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -26,8 +26,10 @@ public class PetBookVerImagenMascotaStepDefinitions {
     @Entonces("^debe encontrar la foto (.*) y agrandarla$")
     public void encontrarFotoAgrandarla(String foto) {
         theActorInTheSpotlight().should(seeThat(
-                CaracteristicasImagen.resultadoImagen(foto)
+                CaracteristicasImagen.resultadoImagen(foto)).orComplainWith(
+                ResultadoDeBusquedaInesperado.class, NO_ENCONTRO_LA_FOTO
         ));
+
     }
 
 }

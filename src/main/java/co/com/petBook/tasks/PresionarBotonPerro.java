@@ -28,7 +28,6 @@ public class PresionarBotonPerro implements Task {
         actor.attemptsTo(
                 Open.url(PET_BOOK_HOME_PAGE),
                 Click.on(CLICK_BOTON_PERRO),
-                //  Enter.theValue().into(CLICK_IMAGEN).thenHit(Keys.ENTER),
                 WaitUntil.the(RESULTADOS_BUSQUEDA, isVisible()).forNoMoreThan(10).seconds()
         );
     }
